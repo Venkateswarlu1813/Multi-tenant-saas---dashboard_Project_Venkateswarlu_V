@@ -2,7 +2,19 @@
 
 ## Overview
 
-A full-stack Multi-Tenant SaaS Dashboard built using Next.js, Django REST Framework, JWT Authentication, and SQLite. The platform provides separate Admin and User dashboards with tenant management, subscription management, payment tracking, analytics, notifications, and revenue monitoring.
+A Full Stack Multi-Tenant SaaS Dashboard built using **Next.js**, **React**, **Django REST Framework**, and **JWT Authentication**. The platform provides tenant management, subscription tracking, payment monitoring, analytics, notifications, and role-based access control for administrators and users.
+
+---
+
+## Live Demo
+
+### Frontend (Vercel)
+
+[[YOUR_VERCEL_URL](https://multi-tenant-saas-dashboard-project.vercel.app/)]
+
+### Backend API (Render)
+
+[[YOUR_RENDER_URL](https://multi-tenant-saas-dashboard-project.onrender.com/admin/login/?next=/admin/)]
 
 ---
 
@@ -12,103 +24,193 @@ A full-stack Multi-Tenant SaaS Dashboard built using Next.js, Django REST Framew
 
 * User Registration
 * User Login
-* Google Login
 * JWT Authentication
-* Role-Based Access Control (Admin/User)
-* Forgot Password Support
+* Role-Based Access Control
+* Forgot Password
+* Google Authentication
 
-### Admin Dashboard
+### Tenant Management
 
-* Dashboard Overview
-* User Management
-* Tenant Management
-* Plan Management
-* Subscription Management
-* Payment Management
-* Revenue Analytics
-* Notification Management
-* Profile Management
+* Create Tenant
+* View Tenants
+* Update Tenant Details
+* Tenant Status Management
 
-### User Dashboard
+### Subscription Management
 
-* Dashboard Overview
-* User Profile
-* Subscription Details
-* Billing & Invoice History
-* Notifications
-* Logout Functionality
+* Create Subscription
+* Track Active Subscriptions
+* Plan Assignment
+* Subscription Analytics
 
-### Revenue Management
+### Payment Management
 
-* Automatic Revenue Calculation
 * Payment Tracking
-* Revenue Analytics Dashboard
-* Real-time Revenue Updates Based on Subscriptions
+* Invoice Generation
+* Transaction Records
+* Revenue Monitoring
+
+### Analytics Dashboard
+
+* Total Users
+* Total Tenants
+* Total Plans
+* Active Subscriptions
+* Revenue Statistics
+* Notifications Count
+
+### Notifications
+
+* User Notifications
+* Tenant Notifications
+* Read/Unread Status
+
+### Admin Panel
+
+* Django Administration Portal
+* User Management
+* Group Management
+* Database Monitoring
 
 ---
 
-## Technology Stack
+## Tech Stack
 
 ### Frontend
 
 * Next.js
 * React.js
 * Tailwind CSS
-* Axios
-* Recharts
-* React Icons
+* Firebase Authentication
 
 ### Backend
 
 * Django
 * Django REST Framework
-* JWT Authentication
+* Simple JWT
+
+### Database
+
 * SQLite
 
-### Authentication
+### Deployment
 
-* JWT Tokens
-* Google Authentication (Firebase)
+* Frontend: Vercel
+* Backend: Render
 
 ---
 
 ## Project Structure
 
-```bash
-frontend/
+```text
+saas-dashboard/
 │
-├── src/
-├── app/
-├── components/
-├── services/
-└── public/
-
-backend/
+├── frontend/
+│   ├── src/app
+│   ├── components
+│   ├── services
+│   └── utils
 │
-├── accounts/
-├── tenants/
-├── plans/
-├── subscriptions/
-├── payments/
-├── notifications_app/
-├── analytics_app/
-└── config/
+├── backend/
+│   ├── accounts
+│   ├── tenants
+│   ├── plans
+│   ├── subscriptions
+│   ├── payments
+│   ├── notifications_app
+│   ├── analytics_app
+│   ├── audit_logs
+│   └── config
+│
+└── requirements.txt
 ```
+
+---
+
+## API Endpoints
+
+### Authentication
+
+```http
+POST /api/auth/register/
+POST /api/auth/login/
+POST /api/auth/forgot-password/
+```
+
+### Tenants
+
+```http
+GET /api/tenants/
+POST /api/tenants/
+```
+
+### Plans
+
+```http
+GET /api/plans/
+POST /api/plans/
+```
+
+### Subscriptions
+
+```http
+GET /api/subscriptions/
+POST /api/subscriptions/
+```
+
+### Payments
+
+```http
+GET /api/payments/
+POST /api/payments/
+```
+
+### Notifications
+
+```http
+GET /api/notifications/
+POST /api/notifications/
+```
+
+### Analytics
+
+```http
+GET /api/dashboard/
+GET /api/dashboard/user-dashboard/
+```
+
+---
+
+## Screenshots
+
+### Login Page
+
+(Add Screenshot Here)
+
+### Admin Dashboard
+
+(Add Screenshot Here)
+
+### User Dashboard
+
+(Add Screenshot Here)
+
+### Django Admin Panel
+
+(Add Screenshot Here)
+
+### Analytics Dashboard
+
+(Add Screenshot Here)
+
+---
 
 ## Installation
 
 ### Clone Repository
 
 ```bash
-git clone https://github.com/Venkateswarlu1813/Multi-tenant-saas---dashboard_Project_Venkateswarlu_V.git
-```
-
-### Frontend Setup
-
-```bash
-cd frontend
-npm install
-npm run dev
+git clone YOUR_GITHUB_REPOSITORY_LINK
 ```
 
 ### Backend Setup
@@ -116,77 +218,36 @@ npm run dev
 ```bash
 cd backend
 
-python -m venv venv
-
-# Windows
-venv\Scripts\activate
-
 pip install -r requirements.txt
 
 python manage.py migrate
 
+python manage.py createsuperuser
+
 python manage.py runserver
+```
+
+### Frontend Setup
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
 ```
 
 ---
 
-## API Features
+## Deployment
 
-### Authentication
+### Frontend
 
-* Register User
-* Login User
-* JWT Token Management
+Deployed on Vercel
 
-### Tenants
+### Backend
 
-* Create Tenant
-* Update Tenant
-* Delete Tenant
-* List Tenants
-
-### Plans
-
-* Create Plans
-* Update Plans
-* Delete Plans
-
-### Subscriptions
-
-* Create Subscription
-* Auto Payment Creation
-* Revenue Update
-
-### Payments
-
-* Payment Records
-* Revenue Calculation
-* Invoice Tracking
-
-### Notifications
-
-* User Notifications
-* Admin Notifications
-
-### Analytics
-
-* Revenue Analytics
-* User Statistics
-* Tenant Statistics
-* Subscription Statistics
-
----
-
-## Key Functionalities
-
-### Automatic Revenue Tracking
-
-When an Admin creates a Subscription:
-
-1. Subscription is created.
-2. Payment record is generated automatically.
-3. Revenue is updated automatically.
-4. Analytics dashboard reflects updated revenue.
+Deployed on Render
 
 ---
 
@@ -194,10 +255,6 @@ When an Admin creates a Subscription:
 
 **Venkateswarlu Vennampalli**
 
+Email: [venkateswarlu4466@gmail.com](mailto:venkateswarlu4466@gmail.com)
 
-GitHub:
-https://github.com/Venkateswarlu1813
-
----
-
-
+GitHub: https://github.com/Venkateswarlu1813
