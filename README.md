@@ -180,59 +180,44 @@ GET /api/dashboard/user-dashboard/
 ```
 
 ---
-# Screenshots
-
 ## Login Page
-
-![Login Page](screenshots/login-page.png)
+![Login Page](login%20page.png)
 
 ## Registration Page
-
-![Register Page](screenshots/register-page.png)
+![Register Page](Register%20page.png)
 
 ## Admin Dashboard
-
-![Admin Dashboard](screenshots/admin-dashboard.png)
+![Admin Dashboard](Admin%20dashboard.png)
 
 ## Tenant Management
+![Tenant](Tenant.png)
 
-![Tenant Management](screenshots/tenant.png)
+## Users
+![Users](users.png)
 
-## User Management
-
-![Users](screenshots/users.png)
-
-## Subscription Plans
-
-![Plans](screenshots/plans.png)
+## Plans
+![Plans](plans.png)
 
 ## Subscriptions
-
-![Subscriptions](screenshots/subscriptions.png)
+![Subscriptions](subscriptions.png)
 
 ## Payments
-
-![Payments](screenshots/payments.png)
+![Payments](payments.png)
 
 ## Notifications
+![Notifications](notifications.png)
 
-![Notifications](screenshots/notifications.png)
+## Analytics
+![Analytics](analytics.png)
 
-## Analytics Dashboard
+## Django Login
+![Django Login](Django%20login.png)
 
-![Analytics](screenshots/analytics.png)
+## Render Deployment
+![Render](Render%20successful.png)
 
-## Django Admin Login
-
-![Django Login](screenshots/django-login.png)
-
-## Render Deployment Success
-
-![Render Deployment](screenshots/render-successful.png)
-
-## Vercel Deployment Success
-
-![Vercel Deployment](screenshots/vercel-successful.png)
+## Vercel Deployment
+![Vercel](Vercel%20successful.png)
 
 ## Installation
 
