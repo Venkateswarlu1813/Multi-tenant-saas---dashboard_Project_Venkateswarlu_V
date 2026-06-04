@@ -17,10 +17,6 @@ urlpatterns = [
 
     path('api/notifications/', include('notifications_app.urls')),
 
-    path(
-        'api/dashboard/',
-        DashboardStatsView.as_view()
-    ),
 
     path(
     'api/tenants/',
