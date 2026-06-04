@@ -27,7 +27,11 @@ SECRET_KEY = 'django-insecure-@j2ay!v16n62uo(j@iwjdbn8p8w@vx26+p+27pprkabl9=r8ax
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "multi-tenant-saas-dashboard-project.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 
 # Application definition
