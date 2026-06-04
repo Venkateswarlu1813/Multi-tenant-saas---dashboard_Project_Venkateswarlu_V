@@ -3,6 +3,14 @@
 import { useState } from "react";
 import API from "../../services/api";
 import { useRouter } from "next/navigation";
+import { FcGoogle } from "react-icons/fc";
+
+import { auth } from "../../firebase";
+
+import {
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -35,6 +43,52 @@ export default function RegisterPage() {
       alert("Registration Failed");
     }
   };
+
+  const handleGoogleSignup = async () => {
+  try {
+    const provider = new GoogleAuthProvider();
+
+    const result = await signInWithPopup(
+      auth,
+      provider
+    );
+
+    const user = result.user;
+
+    localStorage.setItem(
+      "username",
+      user.displayName || ""
+    );
+
+    localStorage.setItem(
+      "email",
+      user.email || ""
+    );
+
+    localStorage.setItem(
+      "role",
+      "USER"
+    );
+
+    localStorage.setItem(
+      "access",
+      "google-auth"
+    );
+
+    localStorage.setItem(
+      "refresh",
+      "google-auth"
+    );
+
+    alert("Google Signup Successful");
+
+    router.push("/dashboard");
+
+  } catch (error) {
+    console.log(error);
+    alert("Google Signup Failed");
+  }
+};
 
   return (
     <div className="min-h-screen bg-slate-950 flex items-center justify-center">
@@ -84,6 +138,24 @@ export default function RegisterPage() {
           >
             Register
           </button>
+
+          <button
+            type="button"
+            onClick={handleGoogleSignup}
+            className="w-full mt-4 bg-white text-black p-4 rounded flex items-center justify-center gap-3 font-semibold"
+          >
+            <FcGoogle size={24} />
+            Sign Up with Google
+          </button>
+
+          <div className="mt-4 text-center">
+            <a
+              href="/login"
+              className="text-blue-400 hover:underline"
+            >
+              Already have an account? Login
+            </a>
+          </div>
 
         </form>
 

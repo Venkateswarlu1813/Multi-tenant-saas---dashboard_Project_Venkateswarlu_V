@@ -27,6 +27,7 @@ export default function Login() {
       });
 
       console.log("LOGIN RESPONSE:", res.data);
+      console.log("ROLE:", res.data.role);
 
       localStorage.setItem("access", res.data.access);
       localStorage.setItem("refresh", res.data.refresh);

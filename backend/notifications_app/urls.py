@@ -13,3 +13,8 @@ router.register(
 )
 
 urlpatterns = router.urls
+
+router = DefaultRouter()
+router.register("", NotificationViewSet)
+
+urlpatterns = router.urls

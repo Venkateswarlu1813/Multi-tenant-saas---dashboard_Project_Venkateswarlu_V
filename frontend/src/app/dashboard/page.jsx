@@ -22,11 +22,13 @@ export default function Dashboard() {
     unread_notifications: 0,
   });
 
-  const [loading, setLoading] = useState(true);
+ const [loading, setLoading] = useState(true);
+ const [unreadNotifications, setUnreadNotifications] = useState(0);
 
-  useEffect(() => {
-    fetchDashboard();
-  }, []);
+useEffect(() => {
+  fetchDashboard();
+  fetchNotifications();
+}, []);
 
   const fetchDashboard = async () => {
     try {
@@ -41,12 +43,26 @@ export default function Dashboard() {
     }
   };
 
+  const fetchNotifications = async () => {
+  try {
+    const res = await API.get("/notifications/");
+
+    const unread = res.data.filter(
+      (item) => !item.is_read
+    ).length;
+
+    setUnreadNotifications(unread);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
   return (
     <div className="flex bg-slate-950 min-h-screen">
       <Sidebar />
 
       <div className="flex-1 p-8">
-        <Navbar />
+        <Navbar unreadNotifications={unreadNotifications} />
 
         {loading ? (
           <div className="text-center text-slate-400 mt-20">
@@ -134,7 +150,7 @@ export default function Dashboard() {
                 </button>
 
               </div>
-              </div>
+             </div>
 
                 {/* System Overview */}
                 <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6">
