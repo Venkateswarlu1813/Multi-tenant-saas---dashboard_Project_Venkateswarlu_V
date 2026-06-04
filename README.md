@@ -250,6 +250,59 @@ Deployed on Vercel
 Deployed on Render
 
 ---
+# Screenshots
+
+## Login Page
+
+![Login Page](screenshots/login-page.png)
+
+## Registration Page
+
+![Register Page](screenshots/register-page.png)
+
+## Admin Dashboard
+
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+## Tenant Management
+
+![Tenant Management](screenshots/tenant.png)
+
+## User Management
+
+![Users](screenshots/users.png)
+
+## Subscription Plans
+
+![Plans](screenshots/plans.png)
+
+## Subscriptions
+
+![Subscriptions](screenshots/subscriptions.png)
+
+## Payments
+
+![Payments](screenshots/payments.png)
+
+## Notifications
+
+![Notifications](screenshots/notifications.png)
+
+## Analytics Dashboard
+
+![Analytics](screenshots/analytics.png)
+
+## Django Admin Login
+
+![Django Login](screenshots/django-login.png)
+
+## Render Deployment Success
+
+![Render Deployment](screenshots/render-successful.png)
+
+## Vercel Deployment Success
+
+![Vercel Deployment](screenshots/vercel-successful.png)
 
 ## Author
 
